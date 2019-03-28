@@ -39,6 +39,11 @@ namespace Ploeh.Samples.ChurchEncoding
 
         public static IMaybe<TResult>
             SelectMany<T, TResult>(this IMaybe<T> source, Func<T, IMaybe<TResult>> selector) =>
-                source.Select(selector).Flatten();
+            source.Match(
+                nothing: new Nothing<TResult>(),
+                just: selector);
+
+        public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> source) =>
+            source.SelectMany(i => i);
     }
 }
