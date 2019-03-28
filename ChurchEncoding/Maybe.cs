@@ -31,5 +31,14 @@ namespace Ploeh.Samples.ChurchEncoding
                 nothing :   new Nothing<TResult>(),
                 just : x => new Just<TResult>(selector(x)));
         }
+
+        public static IMaybe<T> Flatten<T>(this IMaybe<IMaybe<T>> source) =>
+            source.Match(
+                nothing: new Nothing<T>(), 
+                just: i => i);
+
+        public static IMaybe<TResult>
+            SelectMany<T, TResult>(this IMaybe<T> source, Func<T, IMaybe<TResult>> selector) =>
+                source.Select(selector).Flatten();
     }
 }

@@ -33,5 +33,29 @@ namespace Ploeh.Samples.ChurchEncoding
                                     select i.ToString();
             Assert.Equal("42", actual.Match("nothing", x => x));
         }
+
+        [Fact]
+        public void Flatten()
+        {
+            IMaybe<IMaybe<int>> sut = new Just<IMaybe<int>>(new Nothing<int>());
+            Assert.IsType<Nothing<int>>(sut.Flatten());
+
+            sut = new Just<IMaybe<int>>(new Just<int>(42));
+            Assert.IsType<Just<int>>(sut.Flatten());
+
+            sut = new Nothing<IMaybe<int>>();
+            Assert.IsType<Nothing<int>>(sut.Flatten());
+        }
+
+        [Fact]
+        public void SelectManyTest()
+        {
+
+            IMaybe<int> sut = new Just<int>(42);
+            var actual = sut.SelectMany
+                (i => (i % 2 == 0) ? (IMaybe<int>) new Just<int>(i + 10) : new Nothing<int>()).Match(0, i=>i);
+            Assert.Equal( 52, actual);
+
+        }
     }
 }
