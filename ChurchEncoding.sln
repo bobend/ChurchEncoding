@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchEncoding", "ChurchEncoding\ChurchEncoding.csproj", "{26956FAC-018B-41EE-99AE-144BED6F157A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChurchEncoding.Test", "ChurchEncoding.Test\ChurchEncoding.Test.csproj", "{A04DF5A5-5531-4D32-ABB3-6CDA67A34722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{26956FAC-018B-41EE-99AE-144BED6F157A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26956FAC-018B-41EE-99AE-144BED6F157A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26956FAC-018B-41EE-99AE-144BED6F157A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04DF5A5-5531-4D32-ABB3-6CDA67A34722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04DF5A5-5531-4D32-ABB3-6CDA67A34722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04DF5A5-5531-4D32-ABB3-6CDA67A34722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04DF5A5-5531-4D32-ABB3-6CDA67A34722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
